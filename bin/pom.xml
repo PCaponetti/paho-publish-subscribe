@@ -25,13 +25,8 @@
     <dependencies>
         <dependency>
             <groupId>org.eclipse.paho</groupId>
-            <artifactId>org.eclipse.paho.client.mqttv3</artifactId>
-            <version>1.0.2</version>
-        </dependency>
-        <dependency>
-        	<groupId>org.bouncycastle</groupId>
-        	<artifactId>bcprov-jdk15on</artifactId>
-        	<version>1.50</version>
+            <artifactId>paho-mqtt-client</artifactId>
+            <version>1.0.1</version>
         </dependency>
     </dependencies>
 
