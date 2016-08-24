@@ -39,12 +39,9 @@ public class Subscriber {
             MqttConnectOptions options = new MqttConnectOptions();
             options.setUserName(USERNAME);
             options.setPassword(PASSWORD.toCharArray());
-//          options.setWill(client.getTopic(TOPIC), "I disconnected...".getBytes(), 0, false);
-//        	options.setConnectionTimeout(60);
-//        	options.setKeepAliveInterval(60);
-        	options.setSocketFactory(Utils.getSocketFactory(
-				"/Users/pcaponetti/Documents/projects/temp/paho-publish-subscribe/src/main/java/de/dobermai/eclipsemagazin/paho/client/util/ca-certificates-gsr1.cer",
-				"Z7rmxOk5R0MV0xCa3dhfEtc2NUEu8f8tHceQ4MfjdjE="));
+            options.setWill(client.getTopic(TOPIC), "I disconnected...".getBytes(), 0, false);
+        	options.setConnectionTimeout(60);
+        	options.setKeepAliveInterval(60);
 
             client.setCallback(new SubscribeCallback());
             client.connect();

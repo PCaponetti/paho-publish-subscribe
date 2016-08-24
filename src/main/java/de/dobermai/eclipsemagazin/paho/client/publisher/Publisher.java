@@ -38,14 +38,13 @@ public class Publisher {
             MqttConnectOptions options = new MqttConnectOptions();
             options.setUserName(USERNAME);
             options.setPassword(PASSWORD.toCharArray());
-//          options.setWill(client.getTopic(TOPIC), "I disconnected...".getBytes(), 0, false);
-//        	options.setConnectionTimeout(60);
-//        	options.setKeepAliveInterval(60);
-        	options.setSocketFactory(Utils.getSocketFactory(
-				"/Users/pcaponetti/Documents/projects/temp/paho-publish-subscribe/src/main/java/de/dobermai/eclipsemagazin/paho/client/util/ca-certificates-gsr1.cer",
-				"Z7rmxOk5R0MV0xCa3dhfEtc2NUEu8f8tHceQ4MfjdjE="));
+            options.setWill(client.getTopic(TOPIC), "I disconnected...".getBytes(), 0, false);
+        	options.setConnectionTimeout(60);
+        	options.setKeepAliveInterval(60);
 
             client.connect(options);
+
+            mainTopic = client.getTopic(TOPIC);
 
             //Publish data forever
             while (true) {
@@ -66,7 +65,7 @@ public class Publisher {
     private void publishRandomPayload() throws MqttException {
 
         final int randomInt = Utils.createRandomNumberBetween(0, 100);
-        final String randomPayload = "{payload:" + randomInt + "}";
+        String randomPayload = "{payload:" + randomInt + "}";
 
         mainTopic.publish(new MqttMessage(randomPayload.getBytes()));
 
