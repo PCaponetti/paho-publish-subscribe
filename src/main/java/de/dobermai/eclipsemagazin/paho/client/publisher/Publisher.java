@@ -9,14 +9,15 @@ import org.eclipse.paho.client.mqttv3.*;
  */
 public class Publisher {
 
+
     public static final String BROKER_URL = "ssl://broker.xively.com:443";
     // channel to talk over (make/get these from app.xively.com)
-    public static final String TOPIC = "xi/blue/v1/931fb088-cf72-4ddc-bb3c-7f3d93b7c7d2/d/746112d6-0f5d-4914-9c42-6dfd32a1a55f/control";
+    public static final String TOPIC = "xi/blue/v1/bf322efe-ddbf-46d2-94db-df240c9fde76/d/c63921c8-a650-4e7d-a900-77fa531a9d2f/wakeup";
     // username and password come from APIs at blueprint.xively.com
     // specifically, after you login to id.xively.com, go to https://blueprint.xively.com/api/v1/documentation?tags=provision&accountId=#!/access/mqtt-credentials/apiv1accessmqtt_credentials_post_0
-    public static final String USERNAME = "746112d6-0f5d-4914-9c42-6dfd32a1a55f";
-    public static final String PASSWORD = "SYTR9JZzyExG6fWXm+WamVpmttcOL1WSIkrHn2Q1wJ0=";
-
+    public static final String USERNAME = "c63921c8-a650-4e7d-a900-77fa531a9d2f";
+    public static final String PASSWORD = "5XleZzK+zkJnvxDTJwOOfkZOsmQf2C0WPJU1Cm3fobE=";
+    
     private MqttClient client;
     private MqttTopic mainTopic;
 
