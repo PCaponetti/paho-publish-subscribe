@@ -44,7 +44,7 @@ public class Subscriber {
         	options.setKeepAliveInterval(60);
 
             client.setCallback(new SubscribeCallback());
-            client.connect();
+            client.connect(options);
 
             client.subscribe(TOPIC);
 

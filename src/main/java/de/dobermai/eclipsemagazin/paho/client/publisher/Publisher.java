@@ -67,8 +67,10 @@ public class Publisher {
 
         final int randomInt = Utils.createRandomNumberBetween(0, 100);
         String randomPayload = "{payload:" + randomInt + "}";
+        MqttMessage msg = new MqttMessage(randomPayload.getBytes());
+        msg.setRetained(true);
 
-        mainTopic.publish(new MqttMessage(randomPayload.getBytes()));
+        mainTopic.publish(msg);
 
         System.out.println("Published data. Topic: " + mainTopic.getName() + "   Message: " + randomPayload);
     }
